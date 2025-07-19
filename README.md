@@ -70,7 +70,7 @@
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#home" class="teko-font text-3xl font-bold text-saffron flex items-center">
                 <!-- === LOGO UPDATED HERE === -->
-                <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752920986/zo0pd6yxstg4itilm06d.jpg" alt="Jhabua Youth Logo" class="mr-3 h-12 w-12 object-contain">
+                <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752920986/zo0pd6yxstg4itilm06d.jpg" alt="Jhabua Youth Logo" class="mr-3 h-10 w-10 sm:h-12 sm:w-12 object-contain">
                 Jhabua Youth
             </a>
             <div class="hidden md:flex space-x-8">
@@ -98,13 +98,13 @@
         <!-- Section 1: Hero (Landing Page) -->
         <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-center py-20 px-4">
             <div class="container mx-auto">
-                <!-- === ANIMATION CLASS ADDED TO H1 TAG === -->
-                <h1 class="text-6xl md:text-8xl font-bold text-gray-800 drop-shadow-lg animated-gradient-text">Jhabua Youth</h1>
-                <p class="teko-font text-3xl md:text-4xl text-saffron mt-4 tracking-wider">हिन्दू युवाओं का एकता और उत्थान</p>
-                <p class="mt-6 max-w-2xl mx-auto text-gray-600 text-lg">
+                <!-- === ANIMATION CLASS ADDED TO H1 TAG & FONT SIZE ADJUSTED FOR MOBILE === -->
+                <h1 class="text-5xl sm:text-6xl md:text-8xl font-bold text-gray-800 drop-shadow-lg animated-gradient-text">Jhabua Youth</h1>
+                <p class="teko-font text-2xl sm:text-3xl md:text-4xl text-saffron mt-4 tracking-wider">हिन्दू युवाओं का एकता और उत्थान</p>
+                <p class="mt-6 max-w-2xl mx-auto text-gray-600 text-base sm:text-lg">
                     हम झाबुआ के हिन्दू युवाओं का एक सशक्त समूह हैं, जो धर्म, संस्कृति और समाज की सेवा के लिए समर्पित है। हमारा लक्ष्य युवाओं को संगठित कर एक सकारात्मक बदलाव लाना है।
                 </p>
-                <a href="#join" class="mt-10 inline-block btn-saffron teko-font text-2xl">
+                <a href="#join" class="mt-10 inline-block btn-saffron teko-font text-xl sm:text-2xl">
                     <i class="fab fa-whatsapp mr-2"></i> अभी जुड़ें!
                 </a>
             </div>
@@ -113,12 +113,12 @@
         <!-- Section 2: About Us -->
         <section id="about" class="py-20 bg-white">
             <div class="container mx-auto px-6">
-                <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800">हमारे बारे में</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-800">हमारे बारे में</h2>
                 <div class="w-24 h-1 bg-saffron mx-auto mt-4 mb-12"></div>
                 
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h3 class="text-3xl font-bold text-saffron mb-4">हमारा उद्देश्य और दृष्टिकोण</h3>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-saffron mb-4">हमारा उद्देश्य और दृष्टिकोण</h3>
                         <p class="text-gray-600 mb-4">
                             "Jhabua Youth" का मुख्य उद्देश्य हिन्दू युवाओं में सामाजिक और धार्मिक जागरूकता फैलाना है। हम मानते हैं कि संगठित युवा ही समाज और राष्ट्र की नींव को मजबूत कर सकते हैं।
                         </p>
@@ -135,7 +135,7 @@
 
                 <!-- Past Events Gallery -->
                 <div class="mt-20">
-                    <h3 class="text-3xl font-bold text-center text-saffron mb-8">हमारी गतिविधियाँ</h3>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-center text-saffron mb-8">हमारी गतिविधियाँ</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div class="bg-gray-50 p-6 rounded-lg shadow-md text-center">
                             <img src="https://placehold.co/400x300/f0f0f0/333?text=रक्तदान+शिविर" alt="Blood Donation Camp" class="rounded-lg mb-4 w-full h-auto">
@@ -160,7 +160,7 @@
         <!-- Section 3: Join Us Form -->
         <section id="join" class="py-20 hero-bg">
             <div class="container mx-auto px-6">
-                <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800">हमसे जुड़ें</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-800">हमसे जुड़ें</h2>
                 <div class="w-24 h-1 bg-saffron mx-auto mt-4 mb-12"></div>
                 <p class="text-center text-gray-600 max-w-2xl mx-auto mb-10">
                     यदि आप भी Jhabua Youth का हिस्सा बनकर धर्म और समाज की सेवा करना चाहते हैं, तो नीचे दिया गया फॉर्म भरें और सीधे हमारे व्हाट्सएप ग्रुप से जुड़ें।
@@ -195,7 +195,7 @@
         <!-- Section 4: Contact Us -->
         <footer id="contact" class="bg-gray-800 text-white pt-16 pb-8">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold">संपर्क करें</h2>
+                <h2 class="text-3xl sm:text-4xl font-bold">संपर्क करें</h2>
                 <p class="mt-4 max-w-md mx-auto">
                     किसी भी प्रश्न या सुझाव के लिए, हमसे संपर्क करने में संकोच न करें।
                 </p>
