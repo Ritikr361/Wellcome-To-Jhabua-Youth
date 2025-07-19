@@ -45,6 +45,22 @@
         .btn-saffron {
             @apply bg-saffron text-white font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300;
         }
+
+        /* === ANIMATION ADDED HERE === */
+        .animated-gradient-text {
+            background: linear-gradient(90deg, #FF671F, #FFFFFF, #046A38, #FF671F); /* Saffron, White, Green */
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 4s linear infinite;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -82,7 +98,8 @@
         <!-- Section 1: Hero (Landing Page) -->
         <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-center py-20 px-4">
             <div class="container mx-auto">
-                <h1 class="text-6xl md:text-8xl font-bold text-gray-800 drop-shadow-lg">Jhabua Youth</h1>
+                <!-- === ANIMATION CLASS ADDED TO H1 TAG === -->
+                <h1 class="text-6xl md:text-8xl font-bold text-gray-800 drop-shadow-lg animated-gradient-text">Jhabua Youth</h1>
                 <p class="teko-font text-3xl md:text-4xl text-saffron mt-4 tracking-wider">हिन्दू युवाओं का एकता और उत्थान</p>
                 <p class="mt-6 max-w-2xl mx-auto text-gray-600 text-lg">
                     हम झाबुआ के हिन्दू युवाओं का एक सशक्त समूह हैं, जो धर्म, संस्कृति और समाज की सेवा के लिए समर्पित है। हमारा लक्ष्य युवाओं को संगठित कर एक सकारात्मक बदलाव लाना है।
@@ -197,59 +214,69 @@
     </main>
 
     <script>
-        // --- Mobile Menu Toggle ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // --- Set current year in footer ---
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // --- Join Form Submission and WhatsApp Redirect ---
-        const joinForm = document.getElementById('join-form');
-        const formMessage = document.getElementById('form-message');
-
-        joinForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // --- === WHATSAPP LINK UPDATED HERE === ---
-            const whatsappGroupLink = 'https://whatsapp.com/channel/0029Vb5tRWx4tRs2UP0zBb3V';
-
-            // Get form values
-            const name = document.getElementById('name').value.trim();
-            const age = document.getElementById('age').value.trim();
-            const whatsapp = document.getElementById('whatsapp').value.trim();
-            const location = document.getElementById('location').value.trim();
-            
-            // Simple validation
-            if (!name || !age || !whatsapp || !location) {
-                formMessage.textContent = 'कृपया सभी फ़ील्ड भरें।';
-                formMessage.className = 'mt-4 text-center text-red-500 font-semibold';
-                return;
+        // --- FIX: Wrap all JS code in DOMContentLoaded event listener ---
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Mobile Menu Toggle ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
             }
 
-            if (whatsapp.length !== 10 || !/^\d{10}$/.test(whatsapp)) {
-                formMessage.textContent = 'कृपया 10 अंकों का सही व्हाट्सएप नंबर दर्ज करें।';
-                formMessage.className = 'mt-4 text-center text-red-500 font-semibold';
-                return;
+            // --- Set current year in footer ---
+            const yearSpan = document.getElementById('year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
             }
-            
-            // If validation passes
-            formMessage.textContent = 'सफलतापूर्वक सबमिट किया गया! आपको व्हाट्सएप पर रीडायरेक्ट किया जा रहा है...';
-            formMessage.className = 'mt-4 text-center text-green-500 font-semibold';
 
-            // NOTE FOR ADMIN: 
-            // The form data is NOT saved anywhere with this code.
-            // To save data, you can use services like Formspree, Netlify Forms,
-            // or a custom backend API to which you can send this data.
-            // For now, the primary action is to redirect to WhatsApp.
+            // --- Join Form Submission and WhatsApp Redirect ---
+            const joinForm = document.getElementById('join-form');
+            const formMessage = document.getElementById('form-message');
 
-            // Redirect to WhatsApp after a short delay
-            setTimeout(() => {
-                window.open(whatsappGroupLink, '_blank');
-            }, 1500); // 1.5-second delay
+            if (joinForm) {
+                joinForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent the default form submission
+
+                    // --- === WHATSAPP LINK UPDATED HERE === ---
+                    const whatsappGroupLink = 'https://whatsapp.com/channel/0029Vb5tRWx4tRs2UP0zBb3V';
+
+                    // Get form values
+                    const name = document.getElementById('name').value.trim();
+                    const age = document.getElementById('age').value.trim();
+                    const whatsapp = document.getElementById('whatsapp').value.trim();
+                    const location = document.getElementById('location').value.trim();
+                    
+                    // Simple validation
+                    if (!name || !age || !whatsapp || !location) {
+                        formMessage.textContent = 'कृपया सभी फ़ील्ड भरें।';
+                        formMessage.className = 'mt-4 text-center text-red-500 font-semibold';
+                        return;
+                    }
+
+                    if (whatsapp.length !== 10 || !/^\d{10}$/.test(whatsapp)) {
+                        formMessage.textContent = 'कृपया 10 अंकों का सही व्हाट्सएप नंबर दर्ज करें।';
+                        formMessage.className = 'mt-4 text-center text-red-500 font-semibold';
+                        return;
+                    }
+                    
+                    // If validation passes
+                    formMessage.textContent = 'सफलतापूर्वक सबमिट किया गया! आपको व्हाट्सएप पर रीडायरेक्ट किया जा रहा है...';
+                    formMessage.className = 'mt-4 text-center text-green-500 font-semibold';
+
+                    // NOTE FOR ADMIN: 
+                    // The form data is NOT saved anywhere with this code.
+                    // To save data, you can use services like Formspree, Netlify Forms,
+                    // or a custom backend API to which you can send this data.
+                    // For now, the primary action is to redirect to WhatsApp.
+
+                    // Redirect to WhatsApp after a short delay
+                    setTimeout(() => {
+                        window.open(whatsappGroupLink, '_blank');
+                    }, 1500); // 1.5-second delay
+                });
+            }
         });
     </script>
 
